@@ -84,7 +84,7 @@ namespace EllipticCurveGeneration
             }
 
             Point Q = GetQ(initPoint, coefficients.N / coefficients.r);
-            EllipticCurve curve = new EllipticCurve(primeNumber, A, initPoint, coefficients.r);
+            EllipticCurve curve = new EllipticCurve(primeNumber, A, Q, coefficients.r);
             return curve;
         }
 
@@ -225,7 +225,7 @@ namespace EllipticCurveGeneration
                 newNumber = newNumber + modul;
             bool IsDeduction = false;
 
-            for (int i = 1; i < modul; i++)
+            for (int i = 0; i <= modul; i++)
             {
                 int x = i * i;
                 while (x > modul)
@@ -246,7 +246,7 @@ namespace EllipticCurveGeneration
                 newNumber = newNumber + modul;
             bool IsNonDeduction = true;
 
-            for (int i = 1; i < modul; i++)
+            for (int i = 0; i <= modul; i++)
             {
                 int x = i * i;
                 while (x > modul)
